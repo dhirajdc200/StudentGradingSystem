@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import java.net.URL?>
+<AnchorPane prefHeight="476.0" prefWidth="592.0" xmlns="http://javafx.com/javafx/17.0.14" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DashboardController">
+
+    <children>
+
+        <!-- MenuBar -->
+        <MenuBar fx:id="menuBar">
+            <menus>
+                <Menu fx:id="fileMenu" text="File">
+                    <items>
+                        <MenuItem fx:id="exitMenuItem" text="Exit" />
+                    </items>
+                </Menu>
+                <Menu fx:id="helpMenu" text="Help">
+                    <items>
+                        <MenuItem fx:id="aboutMenuItem" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+
+        <!-- Main Layout -->
+        <VBox layoutX="10.0" layoutY="32.0" prefHeight="385.0" prefWidth="582.0" spacing="10">
+            <children>
+
+                <HBox prefHeight="56.0" prefWidth="614.0" spacing="10">
+                    <children>
+                        <Label text="Student Name:" />
+                        <TextField fx:id="studentNameField" />
+                        <Button fx:id="addStudentButton" text="Add Student" />
+                    </children>
+                </HBox>
+
+                <HBox spacing="10">
+                    <children>
+                        <Label text="Subject:" />
+                        <TextField fx:id="subjectField" />
+                        <Label text="Grade:" />
+                        <TextField fx:id="gradeField" />
+                        <Button fx:id="addGradeButton" text="Add Grade" />
+                    </children>
+                </HBox>
+
+                <HBox spacing="10">
+                    <children>
+                        <ListView fx:id="studentListView" prefHeight="78.0" prefWidth="247.0" />
+                        <TableView fx:id="gradeTableView" prefHeight="91.0" prefWidth="212.0">
+                            <columns>
+                                <TableColumn fx:id="subjectColumn" prefWidth="105.60003507137299" text="Subject" />
+                                <TableColumn fx:id="gradeColumn" prefWidth="104.8000259399414" text="Grade" />
+                            </columns>
+                        </TableView>
+
+
+                    </children>
+                </HBox>
+
+                <Button fx:id="deleteStudentButton" text="Delete Student" />
+
+                <BarChart fx:id="gradeChart" prefHeight="191.0" prefWidth="582.0">
+                    <xAxis>
+                        <CategoryAxis label="Subjects" />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="Grades" />
+                    </yAxis>
+                </BarChart>
+
+                <PieChart fx:id="gradePieChart" prefHeight="217.0" prefWidth="582.0" />
+            </children>
+        </VBox>
+
+    </children>
+
+</AnchorPane>
