@@ -1,0 +1,4 @@
+# Copy to db.properties (git-ignored) and fill in your own values.
+db.url=jdbc:mysql://localhost:3306/student_grading
+db.user=your_mysql_username
+db.password=your_mysql_password
